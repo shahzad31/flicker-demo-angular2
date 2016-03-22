@@ -1,0 +1,14 @@
+<h2>PHOTOS</h2>
+<div class="ui stackable six column grid padded" (window:scroll)="onScroll($event)">
+    <div *ngFor="#photo of photos" class="column">
+        <div  class="colum"
+              [class.selected]="isSelected(photo)"
+              (click)="onSelect(photo)">
+            <!--        <span class="badge">{{photo.title}}</span>-->
+            <div class="ui red center aligned segment">
+            <img class="img-flikr" [src]="photo.url_q">
+            </div>
+        </div>
+    </div>
+</div>
+<img class="spinner" src="app/images/spin.gif" *ngIf="show=='show'">
