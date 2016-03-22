@@ -1,0 +1,27 @@
+<div *ngIf="photo" class="ui stackable one column grid padded">
+    <div class="column photoDetailColumn">
+        <button (click)="gotoPhotos()" class="ui red button">Back</button>
+        <div class="ui card photoDetail">
+            <div class="image">
+                <img [src]="photo.url_q">
+            </div>
+            <div class="content">
+                <a class="header">{{photo.title._content}}</a>
+                <div class="meta">
+                    <span class="date">uploaded in {{photo.dates.taken}}</span>
+                </div>
+                <div class="description">
+                    description :: {{photo.description._content}}
+                </div>
+                <label>Photo Id: </label>{{photo.id}}
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="user icon"></i>
+                    uploaded by :: {{photo.owner.realname}}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<img class="spinner" src="app/images/spin.gif" *ngIf="show=='show'">
